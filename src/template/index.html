@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <title></title>
+</head>
+
+<body>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-3">
+        <h1>{{title}} is working</h1>
+        <a href="/posts/create" class="btn btn-primary">create new post</a>
+      </div>
+      <div class="col-lg-9 col-sm-12">
+        <!--{{object_list}} <!--顯示object_list-->
+        {% for obj in object_list %} <!--跟python shell相似 開始for迴圈-->
+        <!--{% url "posts:detail" id=obj.id %}-->
+        <div class="card text-center mb-2">
+          <div class="card-header">
+            <h5 class="card-title"><a href="{{ obj.get_absolute_url }}">Post {{obj.id}} : {{obj.title}}</a></h5>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{obj.content}}</p>
+            <a href="{{ obj.get_absolute_url }}" class="btn btn-primary">Go to see more</a>
+          </div>
+          <div class="card-footer text-muted">
+            {{obj.updated}}
+          </div>
+        </div>
+        {% endfor %} <!--結束for迴圈-->
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

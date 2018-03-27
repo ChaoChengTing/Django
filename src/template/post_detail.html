@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <!--{% if messages %} 加入此段已顯示message-->
+    <!--
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    -->
+    <!--<ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{% if "html_safe" in message.tags %}
+        {{ message|safe }}{% else %}{{message}}{%endif%}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}-->
+    <div class="container">
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <h1 class="text-center">{{title}}</h1>
+          {{content}} <br/>
+          {{updated}} <br/>
+          {{timestamp}} <br/>
+          {{id}} <br/>
+          <div class="text-center">
+            <a href="/posts/{{instance.id}}/edit" class="btn btn-primary">Edit post</a>
+            <a href="/posts/{{instance.id}}/delete" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
