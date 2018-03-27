@@ -44,7 +44,7 @@ def post_list(request):
     #else:
     context = {
         "object_list": queryset,
-        "title": "List"
+        "title": "Article List"
     }
     return render(request, "index.html", context)
 

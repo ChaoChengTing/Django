@@ -11,7 +11,7 @@
   <div class="container mt-4">
     <div class="row">
       <div class="col-3">
-        <h1>{{title}} is working</h1>
+        <h1>{{title}}</h1>
         <a href="/posts/create" class="btn btn-primary">create new post</a>
       </div>
       <div class="col-lg-9 col-sm-12">
@@ -20,14 +20,13 @@
         <!--{% url "posts:detail" id=obj.id %}-->
         <div class="card text-center mb-2">
           <div class="card-header">
-            <h5 class="card-title"><a href="{{ obj.get_absolute_url }}">Post {{obj.id}} : {{obj.title}}</a></h5>
+            <h5 class="card-title text-left"><a href="{{ obj.get_absolute_url }}">{{obj.title}}</a></h5>
           </div>
           <div class="card-body">
-            <p class="card-text">{{obj.content}}</p>
-            <a href="{{ obj.get_absolute_url }}" class="btn btn-primary">Go to see more</a>
+            <p class="card-text text-left">{{obj.content}} <a href="{{ obj.get_absolute_url }}">Go to see more</a></p>
           </div>
-          <div class="card-footer text-muted">
-            {{obj.updated}}
+          <div class="card-footer text-muted text-right">
+            最後編輯時間 : {{obj.updated}}
           </div>
         </div>
         {% endfor %} <!--結束for迴圈-->
